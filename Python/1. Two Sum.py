@@ -3,8 +3,8 @@ class Solution:
         Dict = {}
         for i in range(len(nums)):
             complement = target - nums[i]
-            if not nums[i] in Dict:
-                Dict[complement] = i
-            else:
+            if nums[i] in Dict:
                 return [Dict[nums[i]], i]
+            else:
+                Dict[complement] = i
         return None
